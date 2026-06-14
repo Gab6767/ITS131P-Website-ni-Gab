@@ -1,0 +1,377 @@
+/* =========================================
+   GLOBAL VARIABLES & RESETS
+   ========================================= */
+:root {
+    /* Updated Primary Colors */
+    --primary-green: #016030;
+    --primary-orange: #df5911;
+    
+    --secondary-color: #ffffff;
+    --accent-color: #f4f4f4;
+    --text-main: #333333;
+    --text-light: #666666;
+    --border-color: #dddddd;
+    --font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-stack);
+    color: var(--text-main);
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* =========================================
+   MAIN CONTAINER
+   ========================================= */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1.5rem;
+    margin-bottom: 8.75rem;
+    background-color: var(--secondary-color);
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   HOME PAGE COMPONENTS
+   ========================================= */
+.home-content {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.main-img-logo {
+    width: 100%;
+    max-width: 400px; 
+    height: auto;
+}
+
+/* Updated Toggle / Accordion Styles */
+.info-toggle {
+    margin-bottom: 2rem;
+    background-color: transparent;
+    border-left: none;
+    padding: 0;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.info-toggle summary {
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-light);
+    outline: none;
+}
+
+.info-toggle summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Arrow styling */
+.info-toggle .arrow {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+    color: var(--text-light);
+    display: inline-block;
+}
+
+.info-toggle[open] .arrow {
+    transform: rotate(180deg);
+}
+
+.info-toggle .description {
+    margin-top: 1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    /* CHANGE: This ensures the text block itself is centered */
+    text-align: center;
+    /* CHANGE: Explicitly limiting the width of the description so it doesn't span too wide */
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================================
+   GLOBAL BUTTON STYLES
+   ========================================= */
+.button-group-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.btn {
+    padding: 1.2rem 2rem; 
+    font-size: 1.1rem; 
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+    max-width: 400px; 
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+    color: var(--secondary-color);
+}
+
+/* Home Page Specific Buttons */
+.btn-lost {
+    background-color: var(--primary-orange);
+}
+
+.btn-lost:hover {
+    background-color: #c24d0f; 
+}
+
+.btn-found {
+    background-color: var(--primary-green);
+}
+
+.btn-found:hover {
+    background-color: #014d26; 
+}
+
+/* Form Action Buttons */
+.btn-primary {
+    background-color: var(--primary-green);
+    color: var(--secondary-color);
+}
+
+.btn-primary:hover {
+    background-color: #014c26;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 1px solid #cccccc;
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+    background-color: rgba(1, 96, 48, 0.05);
+}
+
+/* =========================================
+   FORM STYLES
+   ========================================= */
+.form-container {
+    background-color: var(--secondary-color);
+    padding: 3rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: 0.5px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-main);
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    padding: 0.85rem 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background-color: #fafafa;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text-main);
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-orange);
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(223, 89, 17, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-actions {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* =========================================
+   INSTRUCTION PAGE STYLES
+   ========================================= */
+.instruction-container {
+    text-align: center;
+    padding: 4rem 3rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #fafafa;
+    width: 100%;
+    max-width: 700px;
+}
+
+.instruction-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.instruction-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.instruction-text {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    font-size: 1.05rem;
+}
+
+.instruction-text strong {
+    color: var(--text-main);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* =========================================
+   FOOTER STYLES
+   ========================================= */
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 2.5rem 3rem;
+    font-size: 0.85rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-brand {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--primary-orange);
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+    color: #aaaaaa;
+}
+
+.footer-copyright {
+    color: #666666;
+    margin-top: 1rem;
+}
+
+/* =========================================
+   UNIFIED MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 768px) {
+    /* Nav Mobile */
+    nav { flex-direction: column; gap: 1rem; padding: 1rem; }
+    .nav-links { margin: 0; }
+    .nav-links a { margin: 0 1rem; }
+
+    /* Footer Mobile */
+    .footer-content { align-items: center; text-align: center; }
+    .footer-links { flex-direction: column; gap: 0.5rem; }
+
+    /* Forms & Instructions Mobile */
+    .form-container, .instruction-container {
+        padding: 2rem 1.5rem;
+    }
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+    .form-group.full-width {
+        grid-column: span 1;
+    }
+    .form-actions {
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+    .form-actions .btn {
+        width: 100% !important;
+    }
+}

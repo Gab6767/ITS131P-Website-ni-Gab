@@ -1,0 +1,152 @@
+.login-wrapper {
+    min-height: calc(100vh - 120px); 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    background: #ffffff; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding-top: 40px;      
+    box-sizing: border-box;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 480px;        
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.login-header-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #555555;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.login-header-title .arrow-down {
+    font-size: 11px;
+    color: #777777;
+}
+
+.login-logo-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px; 
+}
+
+.login-logo-header img {
+    height: 75px;        
+    width: auto;
+    display: block;
+}
+
+.login-box-green {
+    width: 100%;
+    background: #1c5335; 
+    padding: 40px 35px;
+    border-radius: 8px; 
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-box-green h3 {
+    margin: 0 0 6px 0;
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.portal-subtext {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    margin: 0 0 30px 0;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 18px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    color: white;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.input-group input:hover {
+    border-color: #cf622c; 
+}
+
+.input-group input:focus {
+    border-color: #cf622c;
+    background: rgba(207, 98, 44, 0.12); 
+    box-shadow: 0 0 8px rgba(207, 98, 44, 0.3);
+}
+
+/* SUBMIT BUTTON */
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-transform: uppercase; 
+    background: white;
+    color: #1c5335;            
+    transition: all 0.2s ease;
+    margin-top: 12px;
+}
+
+.btn-submit:hover {
+    background: #cf622c; 
+    color: white;
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+    background: #b54f21;       
+}
+
+#error {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #ffdddd;
+    font-weight: 500;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .login-wrapper {
+        padding-top: 20px;
+    }
+    .login-box-green {
+        padding: 30px 20px;
+    }
+}

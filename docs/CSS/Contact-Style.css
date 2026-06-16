@@ -1,0 +1,131 @@
+/* =========================================
+   CONTACT PAGE STYLES
+   ========================================= */
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Info takes 1 part, Form takes 1.5 parts */
+    gap: 4rem;
+    margin-top: 3rem;
+    background-color: var(--secondary-color);
+}
+
+/* Left Side: Information Blocks */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-info h2 {
+    font-size: 1.8rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.contact-info > p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.info-block {
+    background-color: var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.info-block strong {
+    display: block;
+    color: var(--primary-green);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-block p {
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+/* Right Side: Contact Form Container */
+.contact-form-container {
+    background-color: var(--accent-color);
+    padding: 3rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+/* Input Fields */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: var(--font-stack);
+    font-size: 1rem;
+    background-color: var(--secondary-color);
+    color: var(--text-main);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Focus states for accessibility and visual feedback */
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(1, 96, 48, 0.1);
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: var(--primary-green);
+    color: var(--secondary-color);
+    border: none;
+    padding: 1.2rem 2rem;
+    font-size: 1.05rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background-color: #014a24; /* A slightly darker shade for hover effect */
+    transform: translateY(-2px);
+}
+
+/* Mobile Responsiveness for Contact Page */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .contact-form-container {
+        padding: 2rem 1.5rem;
+    }
+}

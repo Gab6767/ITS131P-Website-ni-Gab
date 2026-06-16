@@ -1,0 +1,86 @@
+.section-card {
+    margin-bottom: 3.5rem;
+    padding: 3rem 2rem;
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+    position: relative; 
+    overflow: hidden; 
+}
+
+.corner-bg-icon {
+    position: absolute;
+    bottom: 0px; 
+    right: -20px; 
+    width: 240px;
+    height: 240px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.icon-green {
+    color: var(--primary-green);
+    opacity: 0.3;
+}
+
+.icon-orange {
+    color: var(--primary-orange);
+    opacity: 0.3;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.home-content h1 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: var(--primary-green);
+}
+
+.section-card:nth-child(2) h1 {
+    color: var(--primary-orange);
+}
+
+.home-content .description {
+    color: var(--text-light);
+    line-height: 1.7;
+    font-size: 1rem;
+    max-width: 85%;
+    text-align: left;
+}
+
+.home-content ul {
+    text-align: left;
+    max-width: 85%;
+    margin: 1.5rem 0 0 0;
+    padding-left: 1.5rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.home-content li {
+    margin-bottom: 1rem;
+}
+
+.home-content li strong {
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .section-card {
+        padding: 2rem 1.5rem;
+    }
+    .home-content .description,
+    .home-content ul {
+        max-width: 100%;
+    }
+    .corner-bg-icon {
+        width: 160px;
+        height: 160px;
+        bottom: -15px;
+        right: -15px;
+    }
+}
